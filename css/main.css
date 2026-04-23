@@ -36,9 +36,9 @@
   --spacing-2xl:  48px;
 
   /* Layout */
-  --container-max-width: 1200px;
+  --container-max-width: 1440px;
   --container-padding:   0 20px;
-  --header-height:       72px;
+  --header-height:       84px;
   --header-height-mobile:60px;
 
   /* Border radius */
@@ -163,14 +163,14 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 60px;
+  padding: 0 7px;
   max-width: 1440px;
   margin: 0 auto;
   gap: 0;
 }
 
 /* --------------------------------------------------------------------------
-   .header__logo — 198×64px
+   .header__logo — 198×64px, 7px from left edge
    -------------------------------------------------------------------------- */
 .header__logo {
   display: flex;
@@ -209,7 +209,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   .nav — 624×21px hug, gap 30px from logo, 33px between items
+   .nav — items 70×21px hug, gap 33px between items, 30px from logo
    -------------------------------------------------------------------------- */
 .nav {
   display: flex;
@@ -221,7 +221,7 @@ button {
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 33px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -235,7 +235,7 @@ button {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 16px;
+  padding: 0;
   font-size: 13px;
   font-weight: var(--font-weight-normal);
   color: var(--color-nav-link);
@@ -316,14 +316,15 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   .header__actions — phone + search + CTA, gap 64px from nav end
+   .header__actions — phone (61×21px) + search + CTA (272px wide)
+   gaps: phone→search 16px, search→CTA 13px
    -------------------------------------------------------------------------- */
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 13px;
   flex-shrink: 0;
-  margin-left: 64px;
+  margin-left: auto;
 }
 
 .header__phone {
@@ -333,6 +334,10 @@ button {
   white-space: nowrap;
   text-decoration: none;
   transition: color var(--transition-base);
+  height: 21px;
+  display: flex;
+  align-items: center;
+  margin-right: 3px; /* phone→search total 16px: 13 gap + 3 extra */
 }
 
 .header__phone:hover {
@@ -376,6 +381,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
+  min-width: 160px;
   font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: #ffffff;
@@ -554,7 +560,7 @@ button {
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .header__inner {
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   .nav,
