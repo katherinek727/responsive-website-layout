@@ -836,6 +836,58 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   RESPONSIVE — Tablet 768px
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 0 0;
+    min-height: 340px;
+    overflow: hidden;
+  }
+
+  .banner__inner {
+    position: relative;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .banner__content {
+    flex: 0 0 60%;
+    max-width: 60%;
+    padding-bottom: 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .banner__title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .banner__desc {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Image bleeds from right edge, overlapping text slightly */
+  .banner__image {
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    flex: none;
+    max-width: 52%;
+    width: 52%;
+    z-index: 1;
+    align-items: flex-end;
+  }
+
+  .banner__image img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE — Mobile ≤ 640px
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
