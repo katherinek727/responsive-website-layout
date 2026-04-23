@@ -1,1 +1,205 @@
-<!-- header.html — placeholder, populated in Step 7 -->
+<!-- ============================================================
+     COMPONENT: Header
+     Includes: logo, desktop nav with dropdowns, phone, search,
+               CTA button, burger menu, mobile nav overlay
+     ============================================================ -->
+<header class="header" role="banner">
+  <div class="container header__inner">
+
+    <!-- Logo -->
+    <a href="/" class="header__logo" aria-label="Битроид — на главную">
+      <!-- SVG logo icon (green circular mark) -->
+      <svg class="header__logo-img" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="22" cy="22" r="22" fill="#3aaa35"/>
+        <!-- Outer ring gap -->
+        <circle cx="22" cy="22" r="16" fill="white"/>
+        <circle cx="22" cy="22" r="12" fill="#3aaa35"/>
+        <!-- Inner white circle -->
+        <circle cx="22" cy="22" r="7" fill="white"/>
+        <!-- Small dot top-right (brand mark) -->
+        <circle cx="32" cy="10" r="3.5" fill="#3aaa35"/>
+      </svg>
+      <span class="header__logo-text">
+        <span class="header__logo-name">Битроид</span>
+        <span class="header__logo-tagline">IT company</span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav" aria-label="Основная навигация">
+      <ul class="nav__list" role="list">
+
+        <!-- Услуги -->
+        <li class="nav__item" data-dropdown>
+          <button class="nav__link" aria-haspopup="true" aria-expanded="false">
+            Услуги
+            <span class="nav__arrow" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown" role="region" aria-label="Услуги">
+            <ul class="dropdown__list" role="list">
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Создание сайтов</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">SEO-продвижение</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Техподдержка</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Интеграции</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Продукты -->
+        <li class="nav__item" data-dropdown>
+          <button class="nav__link" aria-haspopup="true" aria-expanded="false">
+            Продукты
+            <span class="nav__arrow" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown" role="region" aria-label="Продукты">
+            <ul class="dropdown__list" role="list">
+              <li class="dropdown__item"><a href="#" class="dropdown__link">CRM-системы</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Корпоративные порталы</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Интернет-магазины</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Готовые решения -->
+        <li class="nav__item" data-dropdown>
+          <button class="nav__link" aria-haspopup="true" aria-expanded="false">
+            Готовые решения
+            <span class="nav__arrow" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown" role="region" aria-label="Готовые решения">
+            <ul class="dropdown__list" role="list">
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Лендинги</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Корпоративные сайты</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Порталы</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Кейсы и проекты -->
+        <li class="nav__item" data-dropdown>
+          <button class="nav__link" aria-haspopup="true" aria-expanded="false">
+            Кейсы и проекты
+            <span class="nav__arrow" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown" role="region" aria-label="Кейсы и проекты">
+            <ul class="dropdown__list" role="list">
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Все проекты</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Веб-разработка</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Мобильные приложения</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- О нас -->
+        <li class="nav__item" data-dropdown>
+          <button class="nav__link" aria-haspopup="true" aria-expanded="false">
+            О нас
+            <span class="nav__arrow" aria-hidden="true"></span>
+          </button>
+          <div class="dropdown" role="region" aria-label="О нас">
+            <ul class="dropdown__list" role="list">
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Компания</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Команда</a></li>
+              <li class="dropdown__item"><a href="#" class="dropdown__link">Вакансии</a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Right-side actions -->
+    <div class="header__actions">
+      <!-- Phone -->
+      <a href="tel:+74954142808" class="header__phone">+7 (495) 414 28 08</a>
+
+      <!-- Search -->
+      <button class="header__search-btn" aria-label="Поиск по сайту" type="button">
+        <svg viewBox="0 0 18 18" aria-hidden="true">
+          <circle cx="7.5" cy="7.5" r="5.5"/>
+          <line x1="11.5" y1="11.5" x2="16" y2="16"/>
+        </svg>
+      </button>
+
+      <!-- CTA -->
+      <a href="#contact" class="btn-cta">Обсудить проект</a>
+
+      <!-- Burger (visible on tablet/mobile) -->
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileNav" type="button">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+
+  </div><!-- /.header__inner -->
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация" aria-hidden="true">
+  <ul class="mobile-nav__list" role="list">
+
+    <li class="mobile-nav__item" data-mobile-dropdown>
+      <button class="mobile-nav__link" aria-haspopup="true" aria-expanded="false">
+        Услуги <span class="mobile-nav__arrow" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropdown__link">Создание сайтов</a>
+        <a href="#" class="mobile-dropdown__link">SEO-продвижение</a>
+        <a href="#" class="mobile-dropdown__link">Техподдержка</a>
+        <a href="#" class="mobile-dropdown__link">Интеграции</a>
+      </div>
+    </li>
+
+    <li class="mobile-nav__item" data-mobile-dropdown>
+      <button class="mobile-nav__link" aria-haspopup="true" aria-expanded="false">
+        Продукты <span class="mobile-nav__arrow" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropdown__link">CRM-системы</a>
+        <a href="#" class="mobile-dropdown__link">Корпоративные порталы</a>
+        <a href="#" class="mobile-dropdown__link">Интернет-магазины</a>
+      </div>
+    </li>
+
+    <li class="mobile-nav__item" data-mobile-dropdown>
+      <button class="mobile-nav__link" aria-haspopup="true" aria-expanded="false">
+        Готовые решения <span class="mobile-nav__arrow" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropdown__link">Лендинги</a>
+        <a href="#" class="mobile-dropdown__link">Корпоративные сайты</a>
+        <a href="#" class="mobile-dropdown__link">Порталы</a>
+      </div>
+    </li>
+
+    <li class="mobile-nav__item" data-mobile-dropdown>
+      <button class="mobile-nav__link" aria-haspopup="true" aria-expanded="false">
+        Кейсы и проекты <span class="mobile-nav__arrow" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropdown__link">Все проекты</a>
+        <a href="#" class="mobile-dropdown__link">Веб-разработка</a>
+        <a href="#" class="mobile-dropdown__link">Мобильные приложения</a>
+      </div>
+    </li>
+
+    <li class="mobile-nav__item" data-mobile-dropdown>
+      <button class="mobile-nav__link" aria-haspopup="true" aria-expanded="false">
+        О нас <span class="mobile-nav__arrow" aria-hidden="true"></span>
+      </button>
+      <div class="mobile-dropdown">
+        <a href="#" class="mobile-dropdown__link">Компания</a>
+        <a href="#" class="mobile-dropdown__link">Команда</a>
+        <a href="#" class="mobile-dropdown__link">Вакансии</a>
+      </div>
+    </li>
+
+  </ul>
+
+  <!-- Phone + CTA inside mobile menu -->
+  <div class="mobile-nav__footer">
+    <a href="tel:+74954142808" class="mobile-nav__phone">+7 (495) 414 28 08</a>
+    <a href="#contact" class="btn-cta">Обсудить проект</a>
+  </div>
+</nav>
