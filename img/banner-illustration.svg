@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" fill="none">
+  <!-- Glass browser card -->
+  <rect x="80" y="40" width="320" height="260" rx="18" fill="url(#glassGrad)" opacity="0.85"/>
+  <rect x="80" y="40" width="320" height="260" rx="18" stroke="#7ee8e8" stroke-width="1.5" fill="none"/>
+
+  <!-- Browser top bar -->
+  <rect x="80" y="40" width="320" height="44" rx="18" fill="url(#topBarGrad)" opacity="0.7"/>
+  <rect x="80" y="62" width="320" height="22" fill="url(#topBarGrad)" opacity="0.7"/>
+
+  <!-- Browser dots -->
+  <circle cx="108" cy="62" r="5" fill="#7ee8e8" opacity="0.6"/>
+  <circle cx="124" cy="62" r="5" fill="#7ee8e8" opacity="0.6"/>
+  <circle cx="140" cy="62" r="5" fill="#7ee8e8" opacity="0.6"/>
+
+  <!-- Content rows -->
+  <rect x="104" y="104" width="272" height="18" rx="4" fill="#a8f0f0" opacity="0.45"/>
+  <rect x="104" y="132" width="200" height="14" rx="4" fill="#a8f0f0" opacity="0.35"/>
+  <rect x="104" y="156" width="240" height="14" rx="4" fill="#a8f0f0" opacity="0.35"/>
+
+  <!-- Bottom card row -->
+  <rect x="104" y="196" width="80" height="60" rx="8" fill="#a8f0f0" opacity="0.4"/>
+  <rect x="196" y="196" width="80" height="60" rx="8" fill="#a8f0f0" opacity="0.4"/>
+  <rect x="288" y="196" width="80" height="60" rx="8" fill="#a8f0f0" opacity="0.4"/>
+
+  <!-- Magnifier glass -->
+  <circle cx="260" cy="230" r="90" fill="url(#magGrad)" opacity="0.55"/>
+  <circle cx="260" cy="230" r="90" stroke="#7ee8e8" stroke-width="10" fill="none" opacity="0.7"/>
+  <!-- Magnifier handle -->
+  <line x1="328" y1="298" x2="390" y2="360" stroke="#7ee8e8" stroke-width="14" stroke-linecap="round" opacity="0.75"/>
+
+  <!-- Reflection highlight on magnifier -->
+  <ellipse cx="230" cy="200" rx="28" ry="16" fill="white" opacity="0.18" transform="rotate(-30 230 200)"/>
+
+  <defs>
+    <linearGradient id="glassGrad" x1="80" y1="40" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c8f7f7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#e0f8ff" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="topBarGrad" x1="80" y1="40" x2="400" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7ee8e8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#b0f0f0" stop-opacity="0.4"/>
+    </linearGradient>
+    <radialGradient id="magGrad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#e0fafa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#a0e8e8" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+</svg>
