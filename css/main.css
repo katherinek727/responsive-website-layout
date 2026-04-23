@@ -8,7 +8,7 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Colors */
-  --color-primary:       #3aaa35;   /* green — logo, CTA button, accents    */
+  --color-primary:       #34AE6B;   /* green — logo, CTA button, accents    */
   --color-primary-dark:  #2d8a29;   /* green hover state                    */
   --color-text:          #1a1a1a;   /* main body text                       */
   --color-text-secondary:#6b6b6b;   /* "IT company" subtitle, muted text    */
@@ -119,7 +119,7 @@ button {
   max-width: var(--container-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding: var(--container-padding);
+  padding: 0 60px;
 }
 
 /* Flex utilities */
@@ -154,7 +154,6 @@ button {
   width: 100%;
   height: 84px;
   background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
   z-index: var(--z-header);
 }
 
@@ -214,14 +213,14 @@ button {
 .nav {
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 26px;
   flex: 1;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 33px;
+  gap: 24px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -236,7 +235,7 @@ button {
   align-items: center;
   gap: 4px;
   padding: 0;
-  font-size: 13px;
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
   color: var(--color-nav-link);
   white-space: nowrap;
@@ -329,7 +328,7 @@ button {
 
 .header__phone {
   font-family: 'Roboto', var(--font-family-base);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 400;
   line-height: 1.1;
   color: #1E1E1E;
@@ -360,7 +359,8 @@ button {
   color: var(--color-text);
   flex-shrink: 0;
   transition: color var(--transition-base);
-  margin-right: 13px;
+  margin-right: 24px;
+  margin-left: 24px;
 }
 
 .header__search-btn:hover {
@@ -384,11 +384,11 @@ button {
   justify-content: center;
   width: 200px;
   height: 50px;
-  padding: 0 24px;
+  padding: 16px 35.5px;
   font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: #ffffff;
-  background-color: var(--color-primary);
+  background-color: #34AE6B;
   border: none;
   border-radius: 60px;
   white-space: nowrap;
@@ -553,7 +553,7 @@ button {
 }
 
 .mobile-nav__phone {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   color: var(--color-phone);
 }
@@ -599,7 +599,7 @@ button {
   }
 
   .header__logo-name {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
 
   .header__logo-img {
@@ -631,9 +631,9 @@ button {
    ========================================================================== */
 
 .breadcrumb {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid var(--color-border);
-  padding: 10px 0;
+  height: 64px;
+  align-items: center;
+  display: flex;
 }
 
 .breadcrumb__list {
@@ -722,8 +722,6 @@ button {
 .banner {
   position: relative;
   overflow: hidden;
-  /* Gradient: light green top-left → light blue/white bottom-right */
-  background: linear-gradient(135deg, #d4f0d4 0%, #e8f8f0 25%, #dff0fb 60%, #eaf6ff 100%);
   padding: 60px 0 0;
   min-height: 420px;
 }
@@ -747,10 +745,10 @@ button {
 }
 
 .banner__title {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0 0 var(--spacing-lg);
   letter-spacing: -0.01em;
 }
@@ -841,32 +839,7 @@ button {
   max-width: 500px;
   height: auto;
   display: block;
-  /* Slight drop shadow for the 3D glass effect */
   filter: drop-shadow(0 20px 40px rgba(0, 180, 180, 0.18));
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE — Tablet ≤ 1024px
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .banner {
-    padding: 48px 0 0;
-    min-height: 380px;
-  }
-
-  .banner__title {
-    font-size: 34px;
-  }
-
-  .banner__content {
-    flex: 0 0 55%;
-    max-width: 55%;
-  }
-
-  .banner__image {
-    flex: 0 0 42%;
-    max-width: 42%;
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -875,7 +848,7 @@ button {
 @media (max-width: 768px) {
   .banner {
     padding: 40px 0 0;
-    min-height: 340px;
+    min-height: 400px;
     overflow: hidden;
   }
 
@@ -883,19 +856,20 @@ button {
     position: relative;
     align-items: flex-start;
     gap: 0;
+    min-height: 400px;
   }
 
   .banner__content {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 58%;
+    max-width: 58%;
     padding-bottom: 48px;
     position: relative;
     z-index: 2;
   }
 
   .banner__title {
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: 32px;
+    line-height: 1.15;
   }
 
   .banner__desc {
@@ -903,16 +877,14 @@ button {
     line-height: 1.6;
   }
 
-  /* Image bleeds from right edge, overlapping text slightly */
   .banner__image {
     position: absolute;
-    right: -20px;
+    right: -40px;
     bottom: 0;
     flex: none;
-    max-width: 52%;
-    width: 52%;
+    max-width: 55%;
+    width: 55%;
     z-index: 1;
-    align-items: flex-end;
   }
 
   .banner__image img {
@@ -922,11 +894,11 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   RESPONSIVE — Mobile ≤ 640px
+   RESPONSIVE — Mobile 360px
    -------------------------------------------------------------------------- */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .banner {
-    padding: 36px 0 0;
+    padding: 32px 0 0;
     min-height: unset;
   }
 
@@ -935,6 +907,7 @@ button {
     align-items: center;
     gap: 0;
     min-height: unset;
+    position: static;
   }
 
   .banner__content {
@@ -942,11 +915,12 @@ button {
     max-width: 100%;
     width: 100%;
     text-align: center;
-    padding-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
   }
 
   .banner__title {
     font-size: 28px;
+    line-height: 1.2;
     text-align: center;
   }
 
@@ -964,38 +938,24 @@ button {
 
   .btn-pill {
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     padding: 16px 32px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .banner__image {
+    position: static;
     flex: none;
     max-width: 100%;
     width: 100%;
     justify-content: center;
+    right: auto;
+    bottom: auto;
   }
 
   .banner__image img {
-    max-width: 320px;
-    width: 90%;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE — Small mobile ≤ 320px
-   -------------------------------------------------------------------------- */
-@media (max-width: 320px) {
-  .banner__title {
-    font-size: 24px;
-  }
-
-  .banner__desc {
-    font-size: 12px;
-  }
-
-  .btn-pill {
-    font-size: 14px;
-    padding: 14px 24px;
+    max-width: 300px;
+    width: 85%;
+    margin: 0 auto;
   }
 }
