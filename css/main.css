@@ -163,7 +163,7 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 7px;
+  padding: 17px 60px 17px 60px;
   max-width: 1440px;
   margin: 0 auto;
   gap: 0;
@@ -183,8 +183,8 @@ button {
 }
 
 .header__logo-img {
-  width: 44px;
-  height: 44px;
+  width: 198px;
+  height:64px;
   flex-shrink: 0;
 }
 
@@ -203,7 +203,7 @@ button {
 
 .header__logo-tagline {
   font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
+  color: #a0aec0;
   font-weight: var(--font-weight-normal);
   letter-spacing: 0.02em;
 }
@@ -316,58 +316,60 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   .header__actions — phone (61×21px) + search + CTA (272px wide)
-   gaps: phone→search 16px, search→CTA 13px
+   .header__actions — phone (136×18px) + search (24×24px) + CTA (200×50px)
+   gaps: phone→search 3px, search→CTA 13px
    -------------------------------------------------------------------------- */
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 0;
   flex-shrink: 0;
   margin-left: auto;
 }
 
 .header__phone {
-  font-size: 13px;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-phone);
+  font-family: 'Roboto', var(--font-family-base);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1E1E1E;
   white-space: nowrap;
   text-decoration: none;
   transition: color var(--transition-base);
-  height: 21px;
+  width: 136px;
+  height: 18px;
   display: flex;
   align-items: center;
-  margin-right: 3px; /* phone→search total 16px: 13 gap + 3 extra */
+  margin-right: 3px;
 }
 
 .header__phone:hover {
   color: var(--color-primary);
 }
 
-/* Search button */
+/* Search button — 24×24px */
 .header__search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--color-text);
-  border-radius: var(--radius-sm);
-  transition: color var(--transition-base), background-color var(--transition-base);
   flex-shrink: 0;
+  transition: color var(--transition-base);
+  margin-right: 13px;
 }
 
 .header__search-btn:hover {
   color: var(--color-primary);
-  background-color: rgba(58, 170, 53, 0.06);
 }
 
 .header__search-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -375,25 +377,26 @@ button {
   stroke-linejoin: round;
 }
 
-/* CTA button */
+/* CTA button — 200×50px hug, pill shape */
 .btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  min-width: 160px;
+  width: 200px;
+  height: 50px;
+  padding: 0 24px;
   font-size: 13px;
   font-weight: var(--font-weight-bold);
   color: #ffffff;
   background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius-btn);
+  border: none;
+  border-radius: 60px;
   white-space: nowrap;
   text-decoration: none;
   transition: background-color var(--transition-base),
-              border-color var(--transition-base),
               color var(--transition-base);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .btn-cta:hover {
