@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+ <!-- ========== Ellipse ==========
+  <div class="group group48__ellipse8">
+    <img src="img/Ellipse 8.png" alt="Ellipse 8" loading="lazy">
+  </div>
+  <div class="group group48__ellipse9">
+    <img src="img/Ellipse 9.png" alt="Ellipse 8" loading="lazy">
+  </div>
+  <div class="group group49__ellipse8">
+    <img src="img/Ellipse 8.png" alt="Ellipse 8" loading="lazy">
+  </div>
+  <div class="group group49__ellipse9">
+    <img src="img/Ellipse 9.png" alt="Ellipse 8" loading="lazy"> -->
+  </div>
 
   <!-- ========== HEADER ========== -->
   <header class="header" role="banner">
@@ -228,11 +241,12 @@
 
     <!-- ========== BANNER ========== -->
     <section class="banner" aria-label="Создание сайта под ключ с SEO-продвижением">
+       <div class="highlight-box"></div>
       <div class="container">
         <!-- Text content -->
         <div class="banner__content">
           <h1 class="banner__title">
-            Создание сайта под ключ<br>
+            Создание сайта под ключ
             с SEO-продвижением
           </h1>
           <p class="banner__desc">
@@ -317,7 +331,7 @@
     <section class="stacks" aria-label="Что входит в услугу">
       <div class="container">
 
-        <h2 class="stacks__title">Что входит в услугу по созданию сайта с продвижением<br class="stacks__title-br"> в поисковых системах</h2>
+        <h2 class="stacks__title">Что входит в услугу по созданию сайта с продвижением в поисковых системах</h2>
         <p class="stacks__lead">Мы подходим к проекту комплексно: создание и оптимизация сайта идут параллельно, чтобы ваш ресурс сразу после запуска был готов привлекать органический трафик. Все работы разделены на два взаимосвязанных стека.</p>
 
         <div class="stacks__grid">
@@ -328,7 +342,7 @@
             <p class="stacks__card-lead">Закладываем технический фундамент, от которого зависит скорость, стабильность и дальнейшая масштабируемость ресурса. Оптимизация и разработка сайтов для нас — это не просто код, а продуманная архитектура.</p>
 
             <p class="stacks__sub-title">Бэкенд:</p>
-            <ul class="stacks__list">
+            <ul class="stacks__list stacks__list__margin__20">
               <li>Проектируем структуру базы данных.</li>
               <li>Настраиваем серверную часть под высокие нагрузки.</li>
               <li>Реализуем гибкую систему управления контентом.</li>
@@ -521,11 +535,9 @@
               </div>
               <input class="contact__input contact__input--full" type="url" name="site" placeholder="Ссылка на сайт">
 
-              <button class="btn-pill contact__submit" type="submit">
-                <span class="contact__submit-text--desktop">Получить консультацию</span>
-                <span class="contact__submit-text--tablet">Заказать сайт на WordPress</span>
-                <span class="contact__submit-text--mobile">Отправить</span>
-              </button>
+              <div class="contact__from__btn__div">
+                <a href="#contact" class="btn-pill">Получить консультацию</a>
+              </div>
 
               <label class="contact__consent">
                 <span class="contact__checkbox" role="checkbox" aria-checked="false" tabindex="0"></span>
@@ -541,115 +553,120 @@
 
   </main>
 
-  <!-- ========== PRE-FOOTER CTA ========== -->
-  <section class="prefooter" aria-label="Единая платформа">
-    <div class="container">
-      <div class="prefooter__inner">
-        <div class="prefooter__text">
-          <h2 class="prefooter__title">Единая платформа — максимум эффективности</h2>
-          <p class="prefooter__lead">Забудьте о множестве разрозненных сервисов и приложений.</p>
-          <a href="#contact" class="btn-pill prefooter__btn">Получить консультацию</a>
-        </div>
-        <div class="prefooter__image" aria-hidden="true">
-          <img src="img/mark.png" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========== /PRE-FOOTER CTA ========== -->
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-
-      <!-- Top: logo + contacts + nav columns -->
-      <div class="footer__top">
-
-        <!-- Col 1: logo, contacts, socials -->
-        <div class="footer__col footer__col--info">
-          <a href="/" class="footer__logo" aria-label="Bitroid — на главную">
-            <img src="img/mark.png" alt="Bitroid" class="footer__logo-img">
-          </a>
-          <div class="footer__contacts">
-            <a href="tel:+74954142808" class="footer__contact-link">+7 (495) 414 28 08</a>
-            <a href="mailto:b24@bitroid.ru" class="footer__contact-link">b24@bitroid.ru</a>
-            <p class="footer__address">428038, Чувашская республика, г. Чебоксары,<br>ул. Мате Залка, д 10, офис 1</p>
+  <div class="whole__footer">
+     <!-- ========== PRE-FOOTER CTA ========== -->
+    <section class="prefooter" aria-label="Единая платформа">
+      <div>
+        <div class="prefooter__inner">
+          <div class="prefooter__text">
+            <h2 class="prefooter__title">Единая платформа — максимум эффективности</h2>
+            <p class="prefooter__lead">Забудьте о множестве разрозненных сервисов и приложений.</p>
+            
           </div>
-          <div class="footer__socials">
-            <a href="#" class="footer__social footer__social--vk" aria-label="ВКонтакте">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.598-.19 1.365 1.26 2.179 1.815.615.422 1.082.33 1.082.33l2.17-.03s1.135-.07.597-1.123c-.044-.073-.312-.658-1.61-1.861-1.36-1.259-1.177-1.056.46-3.234.999-1.33 1.398-2.142 1.273-2.49-.12-.332-.852-.244-.852-.244l-2.44.015s-.181-.025-.315.056c-.132.079-.216.262-.216.262s-.387 1.03-.903 1.905c-1.088 1.847-1.523 1.945-1.7 1.83-.414-.267-.31-1.073-.31-1.646 0-1.79.271-2.535-.528-2.727-.265-.064-.46-.106-1.138-.113-.87-.009-1.606.003-2.022.207-.277.135-.491.437-.361.454.161.021.526.098.72.362.25.341.241 1.107.241 1.107s.144 2.107-.335 2.368c-.329.18-.78-.187-1.748-1.86-.497-.858-.872-1.807-.872-1.807s-.072-.176-.202-.271c-.157-.115-.376-.151-.376-.151l-2.322.015s-.348.01-.476.161C4.96 8.416 5.1 8.73 5.1 8.73s1.817 4.25 3.872 6.395c1.886 1.97 4.028 1.84 4.028 1.84l1.785-.024z"/></svg>
-            </a>
-            <a href="#" class="footer__social footer__social--tg" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.68 7.93c-.12.56-.46.7-.93.43l-2.57-1.9-1.24 1.19c-.14.14-.25.25-.51.25l.18-2.6 4.7-4.25c.2-.18-.05-.28-.32-.1L7.6 14.37l-2.52-.79c-.55-.17-.56-.55.12-.81l9.85-3.8c.46-.17.86.11.88.8z"/></svg>
-            </a>
-            <a href="#" class="footer__social footer__social--yt" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.58 7.19a2.76 2.76 0 0 0-1.94-1.95C18.01 5 12 5 12 5s-6.01 0-7.64.24A2.76 2.76 0 0 0 2.42 7.19 28.9 28.9 0 0 0 2 12a28.9 28.9 0 0 0 .42 4.81 2.76 2.76 0 0 0 1.94 1.95C5.99 19 12 19 12 19s6.01 0 7.64-.24a2.76 2.76 0 0 0 1.94-1.95A28.9 28.9 0 0 0 22 12a28.9 28.9 0 0 0-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
-            </a>
+          <div class="prefooter__image" aria-hidden="true">
+            <img src="img/pre-footer-image.png" alt="">
+            <a href="#contact" class="btn-pill prefooter__btn">Получить консультацию</a>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- ========== /PRE-FOOTER CTA ========== -->
 
-        <!-- Col 2: О компании -->
-        <div class="footer__col">
-          <ul class="footer__nav-list">
-            <li><a href="#" class="footer__nav-link">О компании</a></li>
-            <li><a href="#" class="footer__nav-link">Контакты</a></li>
-            <li><a href="#" class="footer__nav-link">Отзывы</a></li>
-            <li><a href="#" class="footer__nav-link">Новости</a></li>
-            <li><a href="#" class="footer__nav-link">Статьи</a></li>
-            <li><a href="#" class="footer__nav-link">Акции</a></li>
-            <li><a href="#" class="footer__nav-link">Вопрос-ответ</a></li>
-            <li><a href="#" class="footer__nav-link">Оплата</a></li>
-          </ul>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" role="contentinfo">
+      <div >
+        <a href="/" class="footer__logo" aria-label="Bitroid — на главную">
+          <img src="img/logo.png" alt="Bitroid" class="footer__logo-img">
+        </a>
+        <!-- Top: logo + contacts + nav columns -->
+        <div class="footer__top">
+          
+          <!-- Col 1: logo, contacts, socials -->
+          <div class="footer__col footer__col--info footer__col__1">
+            
+            <div class="footer__contacts">
+              <a href="tel:+74954142808" class="footer__contact-link">+7 (495) 414 28 08</a>
+              <a href="mailto:b24@bitroid.ru" class="footer__contact-link">b24@bitroid.ru</a>
+              <p class="footer__address">428038, Чувашская республика, г. Чебоксары,<br>ул. Мате Залка, д 10, офис 1</p>
+            </div>
+            <div class="footer__socials">
+              <a href="#" aria-label="ВКонтакте">
+                <img src="img/icon1.png" alt="Bitroid" class="footer__col__img">
+              </a>
+              <a href="#" aria-label="Telegram">
+                <img src="img/icon2.png" alt="Bitroid" class="footer__col__img">
+              </a>
+              <a href="#" aria-label="YouTube">
+                <img src="img/icon3.png" alt="Bitroid" class="footer__col__img">
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: О компании -->
+          <div class="footer__col footer__col__2">
+            <ul class="footer__nav-list">
+              <li><a href="#" class="footer__nav-link">О компании</a></li>
+              <li><a href="#" class="footer__nav-link">Контакты</a></li>
+              <li><a href="#" class="footer__nav-link">Отзывы</a></li>
+              <li><a href="#" class="footer__nav-link">Новости</a></li>
+              <li><a href="#" class="footer__nav-link">Статьи</a></li>
+              <li><a href="#" class="footer__nav-link">Акции</a></li>
+              <li><a href="#" class="footer__nav-link">Вопрос-ответ</a></li>
+              <li><a href="#" class="footer__nav-link">Оплата</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Услуги -->
+          <div class="footer__col footer__col__3">
+            <ul class="footer__nav-list">
+              <li><a href="#" class="footer__nav-link">Внедрение CRM</a></li>
+              <li><a href="#" class="footer__nav-link">Создание сайта</a></li>
+              <li><a href="#" class="footer__nav-link">Перенос сайта</a></li>
+              <li><a href="#" class="footer__nav-link">Поддержка сайтов</a></li>
+              <li><a href="#" class="footer__nav-link">Решения для государственных организаций</a></li>
+              <li><a href="#" class="footer__nav-link">Обучение</a></li>
+              <li><a href="#" class="footer__nav-link">Автоматизация</a></li>
+              <li><a href="#" class="footer__nav-link">Интеграция и настройка</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Лицензии + Партнёры -->
+          <div class="footer__col footer__col__4">
+            <ul class="footer__nav-list  footer__col__4__top">
+              <li><a href="#" class="footer__nav-link">1С Битрикс лицензия</a></li>
+              <li><a href="#" class="footer__nav-link">Продление лицензий</a></li>
+            </ul>
+            <ul class="footer__nav-list footer__col__4__bottom">
+              <li><a href="#" class="footer__nav-link footer__nav-link--bold">Для партнёров</a></li>
+              <li><a href="#" class="footer__nav-link footer__nav-link--bold">Вакансии</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: ОКВЭД -->
+          <div class="footer__col  footer__col__5">
+           <ul class="footer__nav-list">
+              <li><a href="#" class="footer__nav-link">ОКВЭД</a></li>
+              <li><a href="#" class="footer__nav-link">дополнительная инфа как в реестре</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        <!-- Col 3: Услуги -->
-        <div class="footer__col">
-          <ul class="footer__nav-list">
-            <li><a href="#" class="footer__nav-link">Внедрение CRM</a></li>
-            <li><a href="#" class="footer__nav-link">Создание сайта</a></li>
-            <li><a href="#" class="footer__nav-link">Перенос сайта</a></li>
-            <li><a href="#" class="footer__nav-link">Поддержка сайтов</a></li>
-            <li><a href="#" class="footer__nav-link">Решения для государственных организаций</a></li>
-            <li><a href="#" class="footer__nav-link">Обучение</a></li>
-            <li><a href="#" class="footer__nav-link">Автоматизация</a></li>
-            <li><a href="#" class="footer__nav-link">Интеграция и настройка</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Лицензии + Партнёры -->
-        <div class="footer__col">
-          <ul class="footer__nav-list">
-            <li><a href="#" class="footer__nav-link">1С Битрикс лицензия</a></li>
-            <li><a href="#" class="footer__nav-link">Продление лицензий</a></li>
-          </ul>
-          <ul class="footer__nav-list footer__nav-list--mt">
-            <li><a href="#" class="footer__nav-link footer__nav-link--bold">Для партнёров</a></li>
-            <li><a href="#" class="footer__nav-link footer__nav-link--bold">Вакансии</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 5: ОКВЭД -->
-        <div class="footer__col">
-          <p class="footer__nav-link footer__nav-link--bold">ОКВЭД</p>
-          <p class="footer__okved">дополнительная инфа<br>как в реестре</p>
+        <!-- Bottom bar -->
+        <div class="footer__bottom">
+          <div class="footer__copy">
+            <span>2026©Bitroid</span>
+            <span>Все права защищены</span>
+          </div>
+          <nav class="footer__legal" aria-label="Юридические документы">
+            <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+            <a href="#" class="footer__legal-link">Пользовательское соглашение</a>
+          </nav>
         </div>
 
       </div>
-
-      <!-- Bottom bar -->
-      <div class="footer__bottom">
-        <div class="footer__copy">
-          <span>2026©Bitroid</span>
-          <span>Все права защищены</span>
-        </div>
-        <nav class="footer__legal" aria-label="Юридические документы">
-          <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
-          <a href="#" class="footer__legal-link">Пользовательское соглашение</a>
-        </nav>
-      </div>
-
-    </div>
-  </footer>
+    </footer>
+  </div>
   <!-- ========== /FOOTER ========== -->
 
   <script src="js/main.js"></script>
