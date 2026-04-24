@@ -113,6 +113,20 @@
   });
 
   /* =========================================================================
+     CONTACT FORM — custom checkbox toggle
+     ========================================================================= */
+  document.querySelectorAll('.contact__checkbox').forEach(function (box) {
+    function toggle() {
+      const checked = box.getAttribute('aria-checked') === 'true';
+      box.setAttribute('aria-checked', String(!checked));
+    }
+    box.addEventListener('click', toggle);
+    box.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* =========================================================================
      FAQ ACCORDION
      ========================================================================= */
   const faqItems = document.querySelectorAll('.faq__item');
