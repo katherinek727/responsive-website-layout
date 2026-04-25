@@ -218,14 +218,27 @@
       dotsWrap.appendChild(dot);
     });
 
+    const GAP = 18;
+
+    function setCardWidths() {
+      const clipWidth = track.parentElement.offsetWidth;
+      // 3 cards + 2 gaps fill the clip exactly
+      const cardW = (clipWidth - GAP * 2) / 3;
+      allCards.forEach(function (c) {
+        c.style.width = cardW + 'px';
+        c.style.flexShrink = '0';
+      });
+      return cardW;
+    }
+
     function getCardWidth() {
-      return allCards[0].offsetWidth + 20; // width + gap
+      return allCards[0].offsetWidth + GAP;
     }
 
     function translateTo(index, animate) {
-      const cardW      = getCardWidth();
-      const clipWidth  = track.parentElement.offsetWidth; // .cases__track-clip width
-      const shift      = (clipWidth / 2) - (index * cardW) - (cardW / 2) + 10; // 10 = half gap
+      const cardW     = getCardWidth();
+      const clipWidth = track.parentElement.offsetWidth;
+      const shift     = (clipWidth / 2) - (index * cardW) - (cardW / 2) + GAP / 2;
 
       if (!animate) {
         track.style.transition = 'none';
@@ -306,11 +319,15 @@
     });
 
     // Initial render — no animation
+    setCardWidths();
     updateActiveClass(pos);
     updateDots(activeOrig);
     translateTo(pos, false);
 
-    window.addEventListener('resize', function () { translateTo(pos, false); });
+    window.addEventListener('resize', function () {
+      setCardWidths();
+      translateTo(pos, false);
+    });
   }());
 
   /* =========================================================================

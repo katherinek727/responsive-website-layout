@@ -968,6 +968,25 @@ button {
   right: 162.5px; */
 }
 
+.btn-cases {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 16px 22px;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+  background-color: #34AE6B;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  min-width: 200px;
+}
+
 .btn-pill:hover {
   background-color: var(--color-primary-dark);
   color: #ffffff;
@@ -1183,7 +1202,7 @@ button {
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   line-height: 1.3;
-  margin: 0 0 40px;
+  margin: 0 0 60px;
 }
 
 .who__title-br { display: inline; }
@@ -1208,7 +1227,15 @@ button {
 }
 
 .who__card-body {
-  padding: 30px 20px 0px 24px;
+  padding: 30px 24px 0px 20px;
+}
+
+.who__card-body2 {
+  padding: 30px 23px 0px 20px;
+}
+
+.who__card-body3 {
+  padding: 30px 49px 0px 20px;
 }
 
 .who__card-title {
@@ -1474,7 +1501,7 @@ button {
   line-height: 1.3;
   padding-left: 20px;
   position: relative;
-  margin-left:12px;
+  margin-left:7px;
 }
 
 .stacks__list li::before {
@@ -1531,7 +1558,7 @@ button {
    ========================================================================== */
 
 .cases {
-  padding: 100px 60px 60px;
+  padding: 100px 60px 0px 60px;
   background: #fff;
 }
 
@@ -1578,11 +1605,12 @@ button {
   min-width: 0;
   overflow: hidden;
   padding: 0;
+  margin: 0px 20px;
 }
 
 .cases__track {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   padding: 40px 0;
   align-items: center;
   overflow: visible;
@@ -1595,7 +1623,8 @@ button {
    Card
    -------------------------------------------------------------------------- */
 .cases__card {
-  flex: 0 0 calc(33.333% - 14px);
+  flex: 0 0 auto;
+  width: calc((100% - 36px) / 3);  /* fallback; JS overrides */
   min-width: 0;
   border-radius: 20px;
   padding: 28px 28px 32px;
@@ -1609,33 +1638,65 @@ button {
               opacity 0.45s ease;
   min-height: 300px;
   box-shadow: 0px 4px 25px 0px #01080314;
-  transform: scale(0.88);
+  transform: scale(0.95);
   opacity: 0.75;
   cursor: pointer;
+  justify-content: end;
+}
+
+.cases__card-background1 {
+  background-image: url('../img/slider1.png');
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.cases__card-background2 {
+  background-image: url('../img/slider2.png');
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.cases__card-background3 {
+  background-image: url('../img/slider3.png');
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.cases__card-background4 {
+  background-image: url('../img/slider4.png');
+   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Active (center) card */
 .cases__card--active {
-  transform: scale(1);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+  transform: scale(1.05);
   z-index: 2;
   opacity: 1;
   cursor: default;
 }
 
 /* Color variants */
-.cases__card[data-color="light"] {
+/* .cases__card[data-color="light"] {
   background: #f0f6ff;
-}
+} */
 
-.cases__card[data-color="green"] {
+/* .cases__card[data-color="green"] {
   background: linear-gradient(135deg, #2db87a 0%, #1a9e65 50%, #1588a8 100%);
   color: #fff;
-}
+} */
 
-.cases__card[data-color="blue"] {
+/* .cases__card[data-color="blue"] {
   background: linear-gradient(135deg, #a8d8f0 0%, #7ec8e8 40%, #5ab0d8 100%);
-}
+} */
 
 /* Large background logo mark */
 .cases__card-bg {
@@ -1660,17 +1721,14 @@ button {
 .cases__tag {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 4px 8px;
   border-radius: 50px;
   font-size: 12px;
   font-weight: 400;
-  background: rgba(255,255,255,0.75);
-  color: #333;
-  border: 1px solid rgba(0,0,0,0.08);
+  color: #1e1e1e;
+  border: 1px solid #1e1e1e;
   width: fit-content;
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(4px);
+  margin-bottom: 10px;
 }
 
 .cases__card[data-color="green"] .cases__tag {
@@ -1752,6 +1810,7 @@ button {
   transition: background var(--transition-base), box-shadow var(--transition-base);
   z-index: 3;
   position: relative;
+
 }
 
 .cases__arrow--next { background: var(--color-primary); border-color: var(--color-primary); }
@@ -1857,7 +1916,7 @@ button {
    ========================================================================== */
 
 .faq {
-  padding: 100px 0 80px;
+  padding: 150px 0px 0px 0px;
   background: #fff;
 }
 
@@ -2079,7 +2138,7 @@ button {
    ========================================================================== */
 
 .contact {
-  padding: 80px 0 100px;
+  padding: 100px 0 100px;
 }
 
 .contact__card {
@@ -2098,7 +2157,6 @@ button {
 .contact__image {
   position: relative;
   overflow: hidden;
-  min-height: 400px;
 }
 
 .contact__image img {
@@ -2307,18 +2365,18 @@ button {
   padding: 41px 60px 112px 60px;
 }
 .prefooter {  
-  padding: 60px 0;
+  padding: 0px 19.58px 73px 60px;
 }
 
 .prefooter__inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
 
 .prefooter__text {
   max-width: 648px;
+  margin-top: 41px;
 }
 
 .prefooter__title {
@@ -2355,7 +2413,7 @@ line-height: 1;
   border-radius: 60px;
   padding: 16px 20px;
   position:absolute;
-  top:111px;
+  top:85px;
   right:162.5px;
 }
 /* --------------------------------------------------------------------------
@@ -2379,7 +2437,7 @@ line-height: 1;
 .footer {
   background: #fff;
   border-top: 1px solid var(--color-border);
-  padding: 48px 0 0;
+  padding: 40px 60px 0px 60px; 
 }
 
 /* --------------------------------------------------------------------------
