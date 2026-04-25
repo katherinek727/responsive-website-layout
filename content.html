@@ -1,1 +1,364 @@
-<!-- content.html — placeholder, populated in Step 30 -->
+<!-- content.html — Только контент (без header/footer/modals) -->
+<!-- Для использования в Битрикс: включается в шаблон между header.html и footer.html -->
+
+<main id="main-content">
+
+  <!-- ========== BREADCRUMB ========== -->
+  <section class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+      <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" class="breadcrumb__link" itemprop="item">
+            <!-- Home icon -->
+            <svg class="breadcrumb__icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 7L8 1l7 6"/>
+              <path d="M2 6.5V14h4.5v-3.5h3V14H14V6.5"/>
+            </svg>
+            <span itemprop="name">Главная</span>
+          </a>
+          <meta itemprop="position" content="1">
+        </li>
+
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/services/" class="breadcrumb__link breadcrumb__link--plain" itemprop="item">
+            <span itemprop="name">Услуги</span>
+          </a>
+          <meta itemprop="position" content="2">
+        </li>
+
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/services/websites/" class="breadcrumb__link breadcrumb__link--plain" itemprop="item">
+            <span itemprop="name">Создание сайтов</span>
+          </a>
+          <meta itemprop="position" content="3">
+        </li>
+
+        <li class="breadcrumb__item breadcrumb__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Сайт+SEO</span>
+          <meta itemprop="position" content="4">
+        </li>
+
+      </ol>
+    </div>
+  </section>
+  <!-- ========== /BREADCRUMB ========== -->
+
+  <!-- ========== BANNER ========== -->
+  <section class="banner" aria-label="Создание сайта под ключ с SEO-продвижением">
+    <div class="container">
+      <!-- Text content -->
+      <div class="banner__content">
+        <h1 class="banner__title">
+          Создание сайта под ключ
+          с SEO-продвижением
+        </h1>
+        <p class="banner__desc">
+          Разработка сайтов с учётом требований по SEO-продвижению с гарантией топовых позиций
+          в поиске. Создаём веб-проекты, которые максимально быстро занимают верхние позиции
+          в поисковиках. Проводим оптимизацию перед запуском, чтобы вам не приходилось менять
+          контент и мета-теги после старта.
+        </p>
+        <div class="banner__actions">
+          <a href="#contact" class="btn-pill">Заказать</a>
+          <div class="banner__actions-arrow">
+             <a href="#calculator" class="btn-text-arrow">Рассчитать стоимость</a>
+            <image src="img/arrow.png" class="banner__actions-arrow--image" alt="arrow_icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Illustration — absolutely positioned relative to .banner -->
+    <div class="banner__image" aria-hidden="true">
+      <img
+        src="img/banner-illustration.png"
+        alt="3D иллюстрация — создание сайта с SEO"
+        width="560"
+        height="560"
+        loading="eager"
+      >
+    </div>
+
+  </section>
+  <!-- ========== /BANNER ========== -->
+
+  <!-- ========== WHO SECTION ========== -->
+  <section class="who" aria-label="Кому рекомендуем">
+    <div class="container">
+      <h2 class="who__title">Кому рекомендуем выбрать создание сайтов<br class="who__title-br"> с SEO-раскруткой</h2>
+
+      <!-- Desktop/Tablet grid; Mobile slider -->
+      <div class="who__cards" id="whoCards">
+
+        <article class="who__card">
+          <div class="who__card-body">
+            <h3 class="who__card-title">Интернет-магазин</h3>
+            <p class="who__card-desc">Создание и продвижение интернет-магазинов. Проектируем структуру фильтров под нечастотные запросы. Внедрим умный фильтр для SEO-тегов.</p>
+          </div>
+          <div class="who__card-img" aria-hidden="true">
+            <img src="img/card-shop.png" alt="Интернет-магазин — пример сайта" loading="lazy">
+          </div>
+        </article>
+
+        <article class="who__card">
+          <div class="who__card-body2">
+            <h3 class="who__card-title">Сфера услуг</h3>
+            <p class="who__card-desc">Создание и продвижение продающих сайтов. Делаем специализированные сайты под SEO-запросы. Прорабатываем структуру под гео-запросы.</p>
+          </div>
+          <div class="who__card-img" aria-hidden="true">
+            <img src="img/card-services.png" alt="Сфера услуг — пример сайта" loading="lazy">
+          </div>
+        </article>
+
+        <article class="who__card">
+          <div class="who__card-body3">
+            <h3 class="who__card-title">B2B-сайты</h3>
+            <p class="who__card-desc">Разработка и продвижение сайтов компаний, специализирующихся на предоставлении услуг корпоративному сегменту.</p>
+          </div>
+          <div class="who__card-img" aria-hidden="true">
+            <img src="img/card-b2b.png" alt="B2B-сайты — пример сайта" loading="lazy">
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Dots (mobile only) -->
+      <div class="who__dots" aria-label="Навигация по слайдам" role="tablist">
+        <button class="who__dot who__dot--active" role="tab" aria-selected="true" aria-label="Слайд 1" data-index="0"></button>
+        <button class="who__dot" role="tab" aria-selected="false" aria-label="Слайд 2" data-index="1"></button>
+        <button class="who__dot" role="tab" aria-selected="false" aria-label="Слайд 3" data-index="2"></button>
+      </div>
+
+    </div>
+  </section>
+  <!-- ========== /WHO SECTION ========== -->
+
+  <!-- ========== STACKS SECTION ========== -->
+  <section class="stacks" aria-label="Что входит в услугу">
+    <div class="container">
+
+      <h2 class="stacks__title">Что входит в услугу по созданию сайта с продвижением в поисковых системах</h2>
+      <p class="stacks__lead">Мы подходим к проекту комплексно: создание и оптимизация сайта идут параллельно, чтобы ваш ресурс сразу после запуска был готов привлекать органический трафик. Все работы разделены на два взаимосвязанных стека.</p>
+
+      <div class="stacks__grid">
+
+        <!-- Stack 1 -->
+        <div class="stacks__card stacks__card--light">
+          <h3 class="stacks__card-title">Стек 1: Разработка</h3>
+          <p class="stacks__card-lead">Закладываем технический фундамент, от которого зависит скорость, стабильность и дальнейшая масштабируемость ресурса. Оптимизация и разработка сайтов для нас — это не просто код, а продуманная архитектура.</p>
+
+          <p class="stacks__sub-title">Бэкенд:</p>
+          <ul class="stacks__list stacks__list__margin__20">
+            <li>Проектируем структуру базы данных.</li>
+            <li>Настраиваем серверную часть под высокие нагрузки.</li>
+            <li>Реализуем гибкую систему управления контентом.</li>
+          </ul>
+
+          <p class="stacks__sub-title">Вёрстка:</p>
+          <ul class="stacks__list">
+            <li>Верстаем сайт по стандартам HTML5/CSS3 — поисковые роботы легко считывают структуру страницы.</li>
+            <li>Адаптируем интерфейс под все устройства — мобильная версия проходит проверку Google Mobile-Friendly, что положительно влияет на ранжирование.</li>
+            <li>Оптимизируем фронтенд-код для высокой скорости загрузки.</li>
+          </ul>
+        </div>
+
+        <!-- Stack 2 -->
+        <div class="stacks__card stacks__card--blue">
+          <h3 class="stacks__card-title">Стек 2: SEO-оптимизация</h3>
+          <p class="stacks__card-lead">Параллельно с разработкой мы проводим SEO-оптимизацию сайта под ключ.</p>
+
+          <ul class="stacks__list">
+            <li>Собираем семантическое ядро, анализируем поисковые запросы вашей тематики, отбираем релевантные ключевые слова.</li>
+            <li>Группируем запросы по смыслу и распределяем по страницам сайта, чтобы каждая отвечала на конкретный запрос пользователя.</li>
+            <li>Составляем Robots.txt — закрываем от индексации служебные страницы и открываем важный контент.</li>
+            <li>Генерируем карту сайта (Sitemap.xml) для ускорения индексации новых страниц и отслеживания структуры ресурса поисковиками.</li>
+            <li>Размечаем контент через Schema.org, чтобы повысить кликабельность.</li>
+            <li>Настраиваем ссылки в соцсетях через Open Graph.</li>
+            <li>Настраиваем 301-редиректы для сохранения ссылочного веса.</li>
+            <li>Формируем понятные человеку адреса страниц — это улучшает восприятие ссылки и ранжирование.</li>
+            <li>Указываем канонические адреса через Canonical.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ========== /STACKS SECTION ========== -->
+
+  <!-- ========== CASES SECTION ========== -->
+  <section class="cases" aria-label="Кейсы и проекты">
+      <div class="cases__header">
+        <div>
+          <h2 class="cases__title">Кейсы и проекты</h2>
+          <p class="cases__lead">Помогаем бизнесам решать задачи максимально эффективно</p>
+        </div>
+        <a href="#" class="btn-cases cases__btn-desktop">Смотреть все кейсы</a>
+      </div>
+    <!-- Slider wrapper (full-width for overflow) -->
+    <div class="cases__slider-wrap">
+      <button class="cases__arrow cases__arrow--prev" aria-label="Предыдущий кейс" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="cases__track-clip">
+        <div class="cases__track" id="casesTrack">
+
+        <article class="cases__card cases__card-background1" data-color="light">
+          <div>
+            <span class="cases__tag">Автоматизация</span>
+            <h3 class="cases__card-title">Автоматизация процессов для строительной компании</h3>
+          </div>
+        </article>
+
+        <article class="cases__card cases__card-background2 cases__card--active" data-color="green" data-always-expanded="true">
+          <div>
+            <span class="cases__tag">Корпоративные порталы</span>
+            <h3 class="cases__card-title">Стройхолдинг</h3>
+            <p class="cases__card-desc">Ускорили выполнение задач строительной компании на 20%.</p>
+            <a href="#" class="cases__card-link">Читать кейс <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+
+        <article class="cases__card cases__card-background3" data-color="blue">
+          <div>
+            <span class="cases__tag">Автоматизация</span>
+            <h3 class="cases__card-title">Автоматизация процессов для строительной компании</h3>
+          </div>
+        </article>
+
+        <article class="cases__card cases__card-background4" data-color="green" data-always-expanded="true">
+          <div>
+            <span class="cases__tag">Корпоративные порталы</span>
+            <h3 class="cases__card-title">Стройхолдинг</h3>
+          </div>
+         
+        </article>
+
+      </div>
+      </div>
+
+      <button class="cases__arrow cases__arrow--next" aria-label="Следующий кейс" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="cases__footer">
+        <div class="cases__dots" id="casesDots" role="tablist" aria-label="Навигация по кейсам"></div>
+        <a href="#" class="btn-pill cases__btn-mobile">Смотреть все кейсы</a>
+      </div>
+    </div>
+  </section>
+  <!-- ========== /CASES SECTION ========== -->
+
+  <!-- ========== FAQ SECTION ========== -->
+  <section class="faq" aria-label="Часто задаваемые вопросы">
+    <div class="container">
+
+      <div class="faq__header">
+          <h2 class="faq__title">Часто задаваемые вопросы</h2>
+      </div>
+
+      <div class="faq__body">
+        <div>
+           <p class="faq__lead">Собрали ответы на самые частые вопросы наших клиентов</p>
+          <!-- Accordion -->
+          <div class="faq__accordion" id="faqAccordion">
+
+            <div class="faq__item faq__item--open">
+              <button class="faq__question" aria-expanded="true" type="button">
+                <span class="faq_question_text">Чем SEO-сайт отличается от обычного?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq__answer">
+                <p>SEO-сайт изначально проектируется с учётом требований поисковых систем: чистый код, правильная иерархия заголовков, оптимизированные мета-теги и высокая скорость загрузки. В отличие от обычного сайта, где оптимизацию часто добавляют постфактум, здесь SEO-параметры закладываются уже на этапе прототипирования. Это позволяет избежать дорогостоящих доработок после запуска и быстрее выйти в топ поиска. Такой ресурс лучше индексируется, получает больше органического трафика и демонстрирует высокую конверсию. Вы получаете готовый маркетинговый актив.</p>
+              </div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__question" aria-expanded="false" type="button">
+                <span class="faq_question_text">Нужно ли платить за ссылки?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq__answer">
+                <p>Ссылочное продвижение — один из факторов ранжирования. Мы анализируем ссылочный профиль конкурентов и при необходимости рекомендуем стратегию наращивания ссылочной массы. Стоимость обсуждается индивидуально.</p>
+              </div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__question" aria-expanded="false" type="button">
+                <span class="faq_question_text">Что такое SEO-структура?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq__answer">
+                <p>SEO-структура — это логическая организация страниц сайта, основанная на семантическом ядре. Правильная структура помогает поисковикам понять тематику ресурса и распределить ссылочный вес между страницами.</p>
+              </div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__question" aria-expanded="false" type="button">
+                <span class="faq_question_text">Сколько стоит создание и продвижение сайта?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq__answer">
+                <p>Стоимость зависит от объёма работ, тематики и конкурентности ниши. Оставьте заявку — мы подготовим индивидуальное коммерческое предложение после анализа вашего проекта.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- Illustration (desktop only) -->
+        <div class="faq__illustration" aria-hidden="true">
+          <img src="img/FAQ.png" alt="" loading="lazy">
+        </div>
+
+      </div>
+
+      <a href="#" class="faq__all-link faq__all-link--desktop">Читать все ответы на вопросы <span aria-hidden="true">→</span></a>
+      <a href="#" class="faq__all-link faq__all-link--mobile">Читать все ответы на вопросы <span aria-hidden="true">→</span></a>
+
+    </div>
+  </section>
+  <!-- ========== /FAQ SECTION ========== -->
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact" aria-label="Получите коммерческое предложение">
+    <div class="container">
+      <div class="contact__card">
+
+        <!-- Left: mockup image (desktop only) -->
+        <div class="contact__image" aria-hidden="true">
+          <img src="img/contact-mockup.png" alt="" loading="lazy">
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact__form-wrap">
+          <h2 class="contact__title">Получите коммерческое предложение</h2>
+          <p class="contact__lead">Закажите предварительный SEO-аудит вашей ниши и КП на разработку</p>
+
+          <form class="contact__form" action="#" method="post" novalidate>
+            <div class="contact__fields">
+              <input class="contact__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+              <input class="contact__input" type="tel" name="phone" placeholder="+7 (999) 999-00-00" autocomplete="tel">
+            </div>
+            <input class="contact__input contact__input--full" type="url" name="site" placeholder="Ссылка на сайт">
+
+            <div class="contact__from__btn__div">
+              <a href="#contact" class="btn-pill">Получить консультацию</a>
+            </div>
+
+            <label class="contact__consent">
+              <span class="contact__checkbox" role="checkbox" aria-checked="false" tabindex="0"></span>
+              <span class="contact__consent-text">Нажимая на кнопку «Отправить», вы соглашаетесь с <a href="#" class="contact__consent-link">Правилами обработки персональных данных</a> и <a href="#" class="contact__consent-link">Политикой конфиденциальности</a></span>
+            </label>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ========== /CONTACT SECTION ========== -->
+
+</main>
