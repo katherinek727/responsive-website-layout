@@ -360,7 +360,7 @@
      CLOSE MOBILE NAV on resize back to desktop
      ========================================================================= */
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth > 1200) {
       closeMobileNav();
     }
   });
