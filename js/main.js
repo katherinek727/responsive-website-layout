@@ -155,78 +155,162 @@
   });
 
   /* =========================================================================
-     CASES SECTION — carousel with arrows and dots
+     CASES SECTION — infinite looping carousel (clone-based)
      ========================================================================= */
   (function () {
-    const track   = document.getElementById('casesTrack');
+    const track    = document.getElementById('casesTrack');
     const dotsWrap = document.getElementById('casesDots');
     if (!track || !dotsWrap) return;
 
-    const cards = Array.from(track.querySelectorAll('.cases__card'));
-    const prevBtn = track.closest('.cases__slider-wrap') && track.closest('.cases__slider-wrap').querySelector('.cases__arrow--prev');
-    const nextBtn = track.closest('.cases__slider-wrap') && track.closest('.cases__slider-wrap').querySelector('.cases__arrow--next');
+    const sliderWrap = track.closest('.cases__slider-wrap');
+    const prevBtn = sliderWrap && sliderWrap.querySelector('.cases__arrow--prev');
+    const nextBtn = sliderWrap && sliderWrap.querySelector('.cases__arrow--next');
 
-    // Build dots
-    cards.forEach(function (_, i) {
+    // Original cards
+    const origCards = Array.from(track.querySelectorAll('.cases__card'));
+    const total     = origCards.length;
+
+    // Find which original card starts as active
+    let activeOrig = origCards.findIndex(function (c) {
+      return c.classList.contains('cases__card--active');
+    });
+    if (activeOrig < 0) activeOrig = 1;
+
+    // Remove active class from all originals — we'll manage it ourselves
+    origCards.forEach(function (c) { c.classList.remove('cases__card--active'); });
+
+    // Clone last N and first N cards and prepend/append for infinite feel
+    // We clone all cards on each side so any jump distance is covered
+    const clonesBefore = origCards.map(function (c) {
+      const cl = c.cloneNode(true);
+      cl.setAttribute('aria-hidden', 'true');
+      cl.dataset.clone = 'before';
+      return cl;
+    });
+    const clonesAfter = origCards.map(function (c) {
+      const cl = c.cloneNode(true);
+      cl.setAttribute('aria-hidden', 'true');
+      cl.dataset.clone = 'after';
+      return cl;
+    });
+
+    // Build final order: [clonesBefore..., originals..., clonesAfter...]
+    track.innerHTML = '';
+    clonesBefore.forEach(function (c) { track.appendChild(c); });
+    origCards.forEach(function (c) { track.appendChild(c); });
+    clonesAfter.forEach(function (c) { track.appendChild(c); });
+
+    // All rendered cards (clones + originals)
+    const allCards = Array.from(track.children);
+    // The real cards start at index `total` (after the clonesBefore block)
+    const offset = total; // index in allCards where originals begin
+
+    // Current position in allCards
+    let pos = offset + activeOrig;
+
+    // Build dots (one per original)
+    origCards.forEach(function (_, i) {
       const dot = document.createElement('button');
-      dot.className = 'cases__dot' + (i === 0 ? ' cases__dot--active' : '');
+      dot.className = 'cases__dot';
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', 'Кейс ' + (i + 1));
-      dot.setAttribute('aria-selected', String(i === 0));
       dot.dataset.index = i;
       dotsWrap.appendChild(dot);
     });
 
-    function getVisibleCount() {
-      if (window.innerWidth <= 480) return 1;
-      if (window.innerWidth <= 768) return 2;
-      return 3;
+    function getCardWidth() {
+      return allCards[0].offsetWidth + 20; // width + gap
     }
 
-    function scrollToIndex(idx) {
-      const cardWidth = cards[0].offsetWidth + 20; // gap
-      track.scrollTo({ left: cardWidth * idx, behavior: 'smooth' });
+    function translateTo(index, animate) {
+      const cardW      = getCardWidth();
+      const clipWidth  = track.parentElement.offsetWidth; // .cases__track-clip width
+      const shift      = (clipWidth / 2) - (index * cardW) - (cardW / 2) + 10; // 10 = half gap
+
+      if (!animate) {
+        track.style.transition = 'none';
+        track.style.transform  = 'translateX(' + shift + 'px)';
+        track.getBoundingClientRect(); // force reflow
+        track.style.transition = '';
+      } else {
+        track.style.transform = 'translateX(' + shift + 'px)';
+      }
     }
 
-    function updateDots(idx) {
+    function updateActiveClass(index) {
+      allCards.forEach(function (c, i) {
+        c.classList.toggle('cases__card--active', i === index);
+      });
+    }
+
+    function updateDots(origIndex) {
       dotsWrap.querySelectorAll('.cases__dot').forEach(function (d, i) {
-        const active = i === idx;
+        const active = i === origIndex;
         d.classList.toggle('cases__dot--active', active);
         d.setAttribute('aria-selected', String(active));
       });
     }
 
-    let currentIdx = 0;
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        currentIdx = Math.max(0, currentIdx - 1);
-        scrollToIndex(currentIdx);
-        updateDots(currentIdx);
-      });
+    function origIndexOf(allIndex) {
+      return ((allIndex - offset) % total + total) % total;
     }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        currentIdx = Math.min(cards.length - getVisibleCount(), currentIdx + 1);
-        scrollToIndex(currentIdx);
-        updateDots(currentIdx);
-      });
+    function go(newPos) {
+      pos = newPos;
+      updateActiveClass(pos);
+      updateDots(origIndexOf(pos));
+      translateTo(pos, true);
     }
+
+    // After transition ends, silently jump from clone to real card
+    track.addEventListener('transitionend', function (e) {
+      if (e.propertyName !== 'transform') return;
+
+      let jumped = false;
+
+      if (pos < offset) {
+        pos = pos + total;
+        jumped = true;
+      } else if (pos >= offset + total) {
+        pos = pos - total;
+        jumped = true;
+      }
+
+      if (jumped) {
+        // Apply active class first so the card is already at scale(1) before we move
+        updateActiveClass(pos);
+        // Freeze card transitions so the scale doesn't re-animate
+        allCards.forEach(function (c) { c.style.transition = 'none'; });
+        translateTo(pos, false);
+        // Restore card transitions on next frame
+        requestAnimationFrame(function () {
+          allCards.forEach(function (c) { c.style.transition = ''; });
+        });
+      }
+    });
+
+    // Click on any card
+    allCards.forEach(function (card, i) {
+      card.addEventListener('click', function () {
+        if (i !== pos) go(i);
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { go(pos - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { go(pos + 1); });
 
     dotsWrap.addEventListener('click', function (e) {
       const dot = e.target.closest('.cases__dot');
       if (!dot) return;
-      currentIdx = parseInt(dot.dataset.index, 10);
-      scrollToIndex(currentIdx);
-      updateDots(currentIdx);
+      go(offset + parseInt(dot.dataset.index, 10));
     });
 
-    track.addEventListener('scroll', function () {
-      const cardWidth = cards[0].offsetWidth + 20;
-      currentIdx = Math.round(track.scrollLeft / cardWidth);
-      updateDots(currentIdx);
-    }, { passive: true });
+    // Initial render — no animation
+    updateActiveClass(pos);
+    updateDots(activeOrig);
+    translateTo(pos, false);
+
+    window.addEventListener('resize', function () { translateTo(pos, false); });
   }());
 
   /* =========================================================================
