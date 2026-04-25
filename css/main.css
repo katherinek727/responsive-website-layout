@@ -670,6 +670,12 @@ button {
     margin-right: 0;
   }
 
+  .banner__image {
+    width: 600px;
+    height: 600px;
+    z-index: 0;
+  }
+
   .group {
     position: absolute;
     width: 190px;
@@ -1008,7 +1014,7 @@ button {
   width: 797px;
   max-width: calc(100% - 620px);
   flex-shrink: 0;
-  z-index: 2;
+  z-index: 1;
   position: relative;
 }
 
@@ -1023,7 +1029,7 @@ button {
 }
 
 .banner__desc {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--color-text);
   line-height: 1.3;
   margin: 0 0 80px;
@@ -1094,6 +1100,7 @@ button {
   cursor: pointer;
   min-width: 200px;
 }
+
 
 .btn-pill:hover {
   background-color: var(--color-primary-dark);
@@ -1170,7 +1177,58 @@ button {
 
   .banner__title {
     font-size: 42px;
+    width: 524px;
   }
+
+  .banner__desc {
+    width: 524px;
+    font-size: 16px;
+  }
+
+  .banner__image {
+    width: 600px;
+    height: 600px;
+    z-index: 0;
+  }
+
+  .banner__image img {
+    width: 600px;
+    height: 600px;
+    max-width: none;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 180, 180, 0.18));
+  }
+
+  
+  .banner__image img {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+  }
+
+  .faq {
+    padding: 72px 0 56px;
+  }
+
+  .faq__title { font-size: 28px; }
+
+  .faq__all-link--desktop { display: none; }
+  .faq__all-link--mobile  { display: inline-flex; margin-top: 28px; }
+
+  .faq__body {
+    grid-template-columns: 1fr !important;
+    gap: 0;
+  }
+
+  .faq__illustration { display: none; }
+
+  .contact__card {
+    grid-template-columns: 1fr !important;
+    border-radius: 20px;
+  }
+
+  .contact__image { display: none; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1189,7 +1247,7 @@ button {
     max-width: 100%;
     width: auto;
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 
   .banner__title {
@@ -1212,7 +1270,7 @@ button {
     top: 0;
     width: 600px;
     height: 600px;
-    z-index: 1;
+    z-index: 0;
   }
 
   .banner__image img {
@@ -1226,11 +1284,11 @@ button {
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .banner {
-    height: 545px;
-    padding-top: 32px;
-    padding-bottom: 0;
-    min-height: unset;
-    overflow: hidden;
+    height: auto;
+    min-height: 545px;
+    padding-top: 80px;
+    overflow: visible;
+    position: relative;
   }
 
   .banner__content {
@@ -1238,7 +1296,7 @@ button {
     width: 100%;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 10;
   }
 
   .banner__title {
@@ -1253,37 +1311,46 @@ button {
     line-height: 1.5;
     max-width: 100%;
     width: auto;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     text-align: center;
   }
 
   .banner__actions {
+    position: relative;
+    z-index: 10;
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    padding: 0 62px;
+    margin-top: 104px;
   }
 
   .banner__actions .btn-pill {
-    width: 100%;
-    max-width: 280px;
+    /* width: 100%; */
+    max-width: none;
   }
 
   .banner__image {
     position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    top: auto;
-    bottom: -60px;
-    width: 450px;
+    left: 45%;
+    transform: translateX(-50%);
+    top: 168px;
+    width: calc(100% - 40px);
+    max-width: 450px;
     height: 450px;
-    z-index: 1;
-    opacity: 0.5;
+    aspect-ratio: 1;
+    z-index: 0;
+    opacity: 1;
   }
 
-  .banner__image img {
-    width: 450px;
-    height: 450px;
+  .banner__image img {  
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
+  
 }
 
 /* ==========================================================================
@@ -1986,6 +2053,10 @@ button {
   .cases__card-title { font-size: 17px; }
 
   .cases__arrow { display: none; }
+
+  .cases__header {
+    padding-left: 60px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -2071,7 +2142,7 @@ button {
 
 .faq__illustration {
   position: sticky;
-  top: 100px;
+  /* top: 100px; */
 }
 
 .faq__illustration img {
