@@ -3113,3 +3113,10 @@ margin: 0;
   z-index: 0;          /* behind text */
   filter: blur(100px);  /* soft glow */
 }
+
+@media (max-width: 400px) {
+  .group__ellipse8,
+  .group__ellipse9 {
+    display: none;
+  }
+}
